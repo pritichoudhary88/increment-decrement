@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+
+        <div class="count"><span>0</span></div>
+        <button onclick="add()">Increment</button>
+        <button onclick="sub()" disabled>Decrement</button>
+
+    </div>
+    <script>
+
+ const button = document.querySelectorAll("button")
+ const output = document.querySelector(".count span")
+ const Increment = document.querySelector("button:first-of-type")
+ const decrement = document.querySelector("button:nth-of-type(2)")
+ let count = 0;
+
+ function add() {
+    output.innerHTML = ++count ;
+    if(count === 10){
+        Increment.disabled = true;
+    }
+    if (count > 0){
+        decrement.disabled = false; 
+    }
+ }
+
+ function sub(){
+    output.innerHTML = --count
+    if (count < 1){
+        decrement.disabled = true; 
+    }
+    if (count < 10){
+        Increment.disabled = false; 
+    }
+ }
+
+
+
+ 
+
+
+    </script>
+</body>
+</html>
